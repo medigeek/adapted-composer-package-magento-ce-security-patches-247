@@ -1,0 +1,18 @@
+diff --git a/vendor/magento/module-store/etc/config.xml b/vendor/magento/module-store/etc/config.xml
+index 0fd9464cf0bf..8bb65fa9c904 100644
+--- a/vendor/magento/module-store/etc/config.xml
++++ b/vendor/magento/module-store/etc/config.xml
+@@ -138,6 +138,13 @@
+                     <svgz>svgz</svgz>
+                     <xml>xml</xml>
+                     <xhtml>xhtml</xhtml>
++                    <hta>hta</hta>
++                    <mhtml>mhtml</mhtml>
++                    <mht>mht</mht>
++                    <htc>htc</htc>
++                    <xht>xht</xht>
++                    <shtm>shtm</shtm>
++                    <php8>php8</php8>
+                 </protected_extensions>
+                 <public_files_valid_paths>
+                     <protected>

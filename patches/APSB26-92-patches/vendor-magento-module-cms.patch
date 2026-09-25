@@ -1,0 +1,98 @@
+diff --git a/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/DeleteFiles.php b/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/DeleteFiles.php
+index e50a4e1b10076..c9916a4383d10 100644
+--- a/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/DeleteFiles.php
++++ b/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/DeleteFiles.php
+@@ -14,5 +14,12 @@
+ class DeleteFiles extends \Magento\Cms\Controller\Adminhtml\Wysiwyg\Images implements HttpPostActionInterface
+ {
++    /**
++     * Authorization for deleting files
++     *
++     * @see _isAllowed()
++     */
++    public const ADMIN_RESOURCE = 'Magento_MediaGalleryUiApi::delete_assets';
++
+     /**
+      * @var \Magento\Framework\Controller\Result\JsonFactory
+      */
+diff --git a/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/DeleteFolder.php b/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/DeleteFolder.php
+index f5f44eb4ed48a..bbcd71392b7a7 100644
+--- a/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/DeleteFolder.php
++++ b/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/DeleteFolder.php
+@@ -17,5 +17,12 @@
+ class DeleteFolder extends \Magento\Cms\Controller\Adminhtml\Wysiwyg\Images implements HttpPostActionInterface
+ {
++    /**
++     * Authorization for deleting folder
++     *
++     * @see _isAllowed()
++     */
++    public const ADMIN_RESOURCE = 'Magento_MediaGalleryUiApi::delete_folder';
++
+     /**
+      * @var \Magento\Framework\Controller\Result\JsonFactory
+      */
+diff --git a/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/NewFolder.php b/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/NewFolder.php
+index 1ef6231611124..5c8ac2a9a8351 100644
+--- a/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/NewFolder.php
++++ b/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/NewFolder.php
+@@ -15,5 +15,12 @@
+ class NewFolder extends \Magento\Cms\Controller\Adminhtml\Wysiwyg\Images implements HttpPostActionInterface
+ {
++    /**
++     * Authorization for creating folder
++     *
++     * @see _isAllowed()
++     */
++    public const ADMIN_RESOURCE = 'Magento_MediaGalleryUiApi::create_folder';
++
+     /**
+      * @var \Magento\Framework\Controller\Result\JsonFactory
+      */
+diff --git a/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/OnInsert.php b/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/OnInsert.php
+index c7b0752e52181..5ab5c5e22f8fe 100644
+--- a/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/OnInsert.php
++++ b/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/OnInsert.php
+@@ -15,6 +15,13 @@
+ 
+ class OnInsert extends Images implements HttpPostActionInterface
+ {
++    /**
++     * Authorization for inserting files
++     *
++     * @see _isAllowed()
++     */
++    public const ADMIN_RESOURCE = 'Magento_MediaGalleryUiApi::insert_assets';
++
+     /**
+      * @var RawFactory
+      */
+diff --git a/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/Upload.php b/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/Upload.php
+index aa1964152e0c3..c28a2248dae42 100644
+--- a/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/Upload.php
++++ b/vendor/magento/module-cms/Controller/Adminhtml/Wysiwyg/Images/Upload.php
+@@ -18,5 +18,12 @@
+ class Upload extends \Magento\Cms\Controller\Adminhtml\Wysiwyg\Images implements HttpPostActionInterface
+ {
++    /**
++     * Authorization for uploading files
++     *
++     * @see _isAllowed()
++     */
++    public const ADMIN_RESOURCE = 'Magento_MediaGalleryUiApi::upload_assets';
++
+     /**
+      * @var \Magento\Framework\Controller\Result\JsonFactory
+      */
+diff --git a/vendor/magento/module-cms/etc/module.xml b/vendor/magento/module-cms/etc/module.xml
+index d3fc2846217d9..50953d37fe93e 100644
+--- a/vendor/magento/module-cms/etc/module.xml
++++ b/vendor/magento/module-cms/etc/module.xml
+@@ -11,6 +11,7 @@
+             <module name="Magento_Store"/>
+             <module name="Magento_Theme"/>
+             <module name="Magento_Variable"/>
++            <module name="Magento_MediaGalleryUiApi"/>
+         </sequence>
+     </module>
+ </config>

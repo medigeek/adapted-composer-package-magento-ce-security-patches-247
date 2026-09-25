@@ -1,0 +1,12 @@
+diff --git a/vendor/magento/module-review/Controller/Adminhtml/Product/Save.php b/vendor/magento/module-review/Controller/Adminhtml/Product/Save.php
+index a7a0c96b7e48f..8c36f33eac47d 100644
+--- a/vendor/magento/module-review/Controller/Adminhtml/Product/Save.php
++++ b/vendor/magento/module-review/Controller/Adminhtml/Product/Save.php
+@@ -37,6 +37,7 @@ public function execute()
+                 $this->messageManager->addErrorMessage(__('The review was removed by another user or does not exist.'));
+             } else {
+                 try {
++                    unset($data['review_id']);
+                     $review->addData($data)->save();
+ 
+                     $arrRatingId = $this->getRequest()->getParam('ratings', []);
