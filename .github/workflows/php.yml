@@ -14,16 +14,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: magento_test
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
     steps:
       - uses: actions/checkout@v4
   
@@ -62,14 +52,17 @@ jobs:
       - name: Create Magento Project
         run: |
           composer create-project --repository-url=https://repo.magento.com/ \
-            magento/product-community-edition:2.4.7 magento-dir --no-scripts --no-interaction
+            magento/product-community-edition:2.4.7 magento-dir --no-install --no-interaction
   
       - name: Require Patch Dependency & Install
         run: |
           cd magento-dir
           
           # Allow the patch plugin
-          composer config allow-plugins.cweagans/composer-patches true
+          composer config 'allow-plugins.cweagans/composer-patches' true
+          composer config 'allow-plugins.magento/*' true
+          composer config 'allow-plugins.dealerdirect/phpcodesniffer-composer-installer' true
+          composer config 'allow-plugins.laminas/laminas-dependency-plugin' true
           
           # Require your patch package (from local path, VCS, or Packagist)
           composer config repositories.local-patch-pkg path "../"
