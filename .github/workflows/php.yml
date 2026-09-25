@@ -72,8 +72,8 @@ jobs:
           composer config 'allow-plugins.php-http/discovery' true
 
           # 4. Require Magento CE $MAGENTO_VERSION and your patch package without running an immediate install
-          composer require magento/product-community-edition:$MAGENTO_VERSION --no-update
-          composer require $PATCH_PACKAGE_NAME:@dev --no-update
+          composer require "magento/product-community-edition:${MAGENTO_VERSION}" --no-update
+          composer require "${PATCH_PACKAGE_NAME}:@dev" --no-update
 
           # 5. Run full install (downloads Magento core + triggers cweagans patching)
           composer install --prefer-dist --no-progress --no-interaction
