@@ -58,23 +58,20 @@ jobs:
           # 1. Create directory and initialize a clean root composer.json
           mkdir magento-dir
           cd magento-dir
-          #composer init --name="test/magento-test-app" --no-interaction
+          composer init --name="test/magento-test-app" --no-interaction
           
           # 2. Add repo.magento.com and your local patch package repository
-          #composer config repositories.magento composer https://repo.magento.com/
+          composer config repositories.magento composer https://repo.magento.com/
           #composer config repositories.local-security-patches path "../"
           composer config --global repositories.medigeek-patches vcs "https://github.com/${PATCH_PACKAGE_NAME}.git"
 
           # 3a. Allow required plugins using proper single-quotes
           #composer config --global allow-plugins true
-          composer config --global 'allow-plugins.cweagans/composer-patches' true
-          composer config --global 'allow-plugins.magento/*' true
-          composer config --global 'allow-plugins.dealerdirect/phpcodesniffer-composer-installer' true
-          composer config --global 'allow-plugins.laminas/laminas-dependency-plugin' true
-          composer config --global 'allow-plugins.php-http/discovery' true
-
-          composer create-project --repository-url=https://repo.magento.com/ \
-            "magento/product-community-edition:${MAGENTO_VERSION}" . --no-install --no-interaction
+          composer config 'allow-plugins.cweagans/composer-patches' true
+          composer config 'allow-plugins.magento/*' true
+          composer config 'allow-plugins.dealerdirect/phpcodesniffer-composer-installer' true
+          composer config 'allow-plugins.laminas/laminas-dependency-plugin' true
+          composer config 'allow-plugins.php-http/discovery' true
 
           # 3b. Set patch options via CLI
           composer config extra.magento-force override
@@ -82,7 +79,9 @@ jobs:
           composer config extra.composer-patches.default-patch-depth 4
 
           # 4. Require Magento CE $MAGENTO_VERSION and your patch package without running an immediate install
-          composer require "magento/product-community-edition:${MAGENTO_VERSION}" --no-update
+          composer create-project --repository-url=https://repo.magento.com/ \
+            "magento/product-community-edition:${MAGENTO_VERSION}" . --no-install --no-interaction
+          #composer require "magento/product-community-edition:${MAGENTO_VERSION}" --no-update
           composer require "${PATCH_PACKAGE_NAME}:@dev" --no-update
 
           # 5. Run full install (downloads Magento core + triggers cweagans patching)
