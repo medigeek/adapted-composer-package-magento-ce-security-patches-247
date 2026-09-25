@@ -1,4 +1,8 @@
-name: PHP Composer
+name: Test Magento security patches
+
+env:
+  PACKAGE_NAME: "medigeek/adapted-composer-package-magento-ce-security-patches-247"
+  MAGENTO_VERSION: "2.4.7-p10"
 
 on:
   push:
@@ -67,9 +71,9 @@ jobs:
           composer config 'allow-plugins.laminas/laminas-dependency-plugin' true
           composer config 'allow-plugins.php-http/discovery' true
 
-          # 4. Require Magento CE 2.4.7 and your patch package without running an immediate install
-          composer require magento/product-community-edition:2.4.7 --no-update
-          composer require medigeek/adapted-composer-package-magento-ce-security-patches-247:@dev --no-update
+          # 4. Require Magento CE $MAGENTO_VERSION and your patch package without running an immediate install
+          composer require magento/product-community-edition:$MAGENTO_VERSION --no-update
+          composer require $PATCH_PACKAGE_NAME:@dev --no-update
 
           # 5. Run full install (downloads Magento core + triggers cweagans patching)
           composer install --prefer-dist --no-progress --no-interaction
