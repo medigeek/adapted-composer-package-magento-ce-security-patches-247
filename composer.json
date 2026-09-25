@@ -10,9 +10,6 @@
             "magento/module-quote": {
                 "APSB26-73 security patch module-quote": "patches/APSB26-73-patches/vendor-magento-module-quote.patch"
             },
-            "magento/module-require-js": {
-                "page builder patch ACSD-52041": "patches/fix-backend-error-page-builder-2-acsd-52041.patch"
-            },
             "magento/module-backend": {
                 "APSB26-146 security patch module-backend": "patches/APSB26-146/vendor-magento-module-backend.patch"
             },
