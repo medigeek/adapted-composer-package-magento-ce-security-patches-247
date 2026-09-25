@@ -7,6 +7,11 @@
         "cweagans/composer-patches": "^1.7 || ^2.0"
     },
     "extra": {
+        "magento-force": "override",
+        "composer-exit-on-patch-failure": true,
+        "composer-patches": {
+            "default-patch-depth": 4
+        },
         "patches": {
             "magento/module-quote": {
                 "APSB26-73 security patch module-quote": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-quote.patch"
