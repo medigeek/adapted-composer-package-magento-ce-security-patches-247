@@ -56,20 +56,27 @@ jobs:
   
       - name: Require Patch Dependency & Install
         run: |
+          # 1. Create directory and initialize a clean root composer.json
+          mkdir magento-dir
           cd magento-dir
-          
-          # Allow the patch plugin
+          composer init --name="test/magento-test-app" --no-interaction
+
+          # 2. Add repo.magento.com and your local patch package repository
+          composer config repositories.magento composer https://repo.magento.com/
+          composer config repositories.local-security-patches path "../"
+
+          # 3. Allow required plugins using proper single-quotes
           composer config 'allow-plugins.cweagans/composer-patches' true
           composer config 'allow-plugins.magento/*' true
           composer config 'allow-plugins.dealerdirect/phpcodesniffer-composer-installer' true
           composer config 'allow-plugins.laminas/laminas-dependency-plugin' true
           composer config 'php-http/discovery' true
-          
-          # Require your patch package (from local path, VCS, or Packagist)
-          composer config repositories.local-patch-pkg path "../"
+
+          # 4. Require Magento CE 2.4.7 and your patch package without running an immediate install
+          composer require magento/product-community-edition:2.4.7 --no-update
           composer require medigeek/adapted-composer-package-magento-ce-security-patches-247:@dev --no-update
-          
-          # Run full install to pull Magento + Apply Patches
+
+          # 5. Run full install (downloads Magento core + triggers cweagans patching)
           composer install --prefer-dist --no-progress --no-interaction
 
       - name: Verify Patches Applied Successfully
