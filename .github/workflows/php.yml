@@ -73,14 +73,16 @@ jobs:
           composer config --global 'allow-plugins.laminas/laminas-dependency-plugin' true
           composer config --global 'allow-plugins.php-http/discovery' true
 
-          # 3b. Set patch options via CLI
-          composer config --global extra.magento-force override
-          composer config --global extra.composer-exit-on-patch-failure true
-          composer config --global extra.composer-patches.default-patch-depth 4
-
-          # 4. Require Magento CE $MAGENTO_VERSION and your patch package without running an immediate install
           composer create-project --repository-url=https://repo.magento.com/ \
             "magento/product-community-edition:${MAGENTO_VERSION}" . --no-install --no-interaction
+
+          # 3b. Set patch options via CLI
+          composer config extra.magento-force override
+          composer config extra.composer-exit-on-patch-failure true
+          composer config extra.composer-patches.default-patch-depth 4
+
+          # 4. Require Magento CE $MAGENTO_VERSION and your patch package without running an immediate install
+
           #composer require "magento/product-community-edition:${MAGENTO_VERSION}" --no-update
           composer require "${PATCH_PACKAGE_NAME}:@dev" --no-update
 
