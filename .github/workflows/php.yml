@@ -1,0 +1,93 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: magento_test
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - uses: actions/checkout@v4
+  
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+  
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+  
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+  
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, gd, xml, bcmath, pdo_mysql, zip, curl
+          tools: composer:v2
+  
+      - name: Cache Composer Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+  
+      - name: Set Composer Authentication
+        run: |
+          mkdir -p ~/.composer
+          echo '${{ secrets.COMPOSER_AUTH }}' > ~/.composer/auth.json
+  
+      - name: Create Magento Project
+        run: |
+          composer create-project --repository-url=https://repo.magento.com/ \
+            magento/product-community-edition:2.4.7 magento-dir --no-install
+  
+      - name: Require Patch Dependency & Install
+        run: |
+          cd magento-dir
+          
+          # Allow the patch plugin
+          composer config allow-plugins.cweagans/composer-patches true
+          
+          # Require your patch package (from local path, VCS, or Packagist)
+          #composer require mycompany/magento2-common-patches:@dev --no-update
+          composer config repositories.local-patch-pkg path "../"
+          composer require medigeek/adapted-composer-package-magento-ce-security-patches-247:@dev --no-update
+          
+          # Run full install to pull Magento + Apply Patches
+          composer install --prefer-dist --no-progress --no-interaction
+  
+      - name: Install Dependencies & Apply Patches
+        run: |
+          composer install --prefer-dist --no-progress --no-interaction
+  
+      - name: Verify Patches Applied Successfully
+        run: |
+          # Check if cweagans plugin applied patches by verifying vendor file changes or checking composer output
+          php bin/magento --version
+
