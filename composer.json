@@ -8,54 +8,54 @@
     "extra": {
         "patches": {
             "magento/module-quote": {
-                "APSB26-73 security patch module-quote": "patches/APSB26-73-patches/vendor-magento-module-quote.patch"
+                "APSB26-73 security patch module-quote": "patches/APSB26-73/vendor-magento-module-quote.patch"
             },
             "magento/module-backend": {
                 "APSB26-146 security patch module-backend": "patches/APSB26-146/vendor-magento-module-backend.patch"
             },
             "magento/framework": {
-                "APSB26-73 security patch framework": "patches/APSB26-73-patches/vendor-magento-framework.patch",
+                "APSB26-73 security patch framework": "patches/APSB26-73/vendor-magento-framework.patch",
                 "APSB26-138 security patch framework": "patches/APSB26-138/vendor-magento-framework.patch",
                 "APSB26-146 security patch framework": "patches/APSB26-146/vendor-magento-framework.patch"
             },
             "magento/module-async-config": {
-                "APSB26-73 security patch module-async-config": "patches/APSB26-73-patches/vendor-magento-module-async-config.patch"
+                "APSB26-73 security patch module-async-config": "patches/APSB26-73/vendor-magento-module-async-config.patch"
             },
             "magento/module-catalog-inventory": {
-                "APSB26-73 security patch module-catalog-inventory": "patches/APSB26-73-patches/vendor-magento-module-catalog-inventory.patch"
+                "APSB26-73 security patch module-catalog-inventory": "patches/APSB26-73/vendor-magento-module-catalog-inventory.patch"
             },
             "magento/module-catalog": {
-                "APSB26-73 security patch module-catalog": "patches/APSB26-73-patches/vendor-magento-module-catalog.patch"
+                "APSB26-73 security patch module-catalog": "patches/APSB26-73/vendor-magento-module-catalog.patch"
             },
             "magento/module-catalog-url-rewrite-graph-ql": {
-                "APSB26-73 security patch module-catalog-url-rewrite-graph-ql": "patches/APSB26-73-patches/vendor-magento-module-catalog-url-rewrite-graph-ql.patch"
+                "APSB26-73 security patch module-catalog-url-rewrite-graph-ql": "patches/APSB26-73/vendor-magento-module-catalog-url-rewrite-graph-ql.patch"
             },
             "magento/module-checkout": {
-                "APSB26-73 security patch module-checkout": "patches/APSB26-73-patches/vendor-magento-module-checkout.patch"
+                "APSB26-73 security patch module-checkout": "patches/APSB26-73/vendor-magento-module-checkout.patch"
             },
             "magento/module-customer": {
-                "APSB26-73 security patch module-customer": "patches/APSB26-73-patches/vendor-magento-module-customer.patch",
-                "APSB26-92 security patch module-customer": "patches/APSB26-92-patches/vendor-magento-module-customer.patch",
+                "APSB26-73 security patch module-customer": "patches/APSB26-73/vendor-magento-module-customer.patch",
+                "APSB26-92 security patch module-customer": "patches/APSB26-92/vendor-magento-module-customer.patch",
                 "APSB26-138 security patch module-customer": "patches/APSB26-138/vendor-magento-module-customer.patch"
             },
             "magento/module-gift-message": {
-                "APSB26-73 security patch module-gift-message": "patches/APSB26-73-patches/vendor-magento-module-gift-message.patch"
+                "APSB26-73 security patch module-gift-message": "patches/APSB26-73/vendor-magento-module-gift-message.patch"
             },
             "magento/module-store": {
-                "APSB26-73 security patch module-store": "patches/APSB26-73-patches/vendor-magento-module-store.patch"
+                "APSB26-73 security patch module-store": "patches/APSB26-73/vendor-magento-module-store.patch"
             },
             "magento/module-translation": {
-                "APSB26-73 security patch module-translation": "patches/APSB26-73-patches/vendor-magento-module-translation.patch"
+                "APSB26-73 security patch module-translation": "patches/APSB26-73/vendor-magento-module-translation.patch"
             },
             "magento/magento2-base": {
-                "APSB26-92 security patch lib-web": "patches/APSB26-92-patches/lib-web.patch",
+                "APSB26-92 security patch lib-web": "patches/APSB26-92/lib-web.patch",
                 "APSB26-146 security patch pub-errors.patch": "patches/APSB26-146/pub-errors.patch"
             },
             "magento/module-cms": {
-                "APSB26-92 security patch module-cms": "patches/APSB26-92-patches/vendor-magento-module-cms.patch"
+                "APSB26-92 security patch module-cms": "patches/APSB26-92/vendor-magento-module-cms.patch"
             },
             "magento/module-review": {
-                "APSB26-92 security patch module-review": "patches/APSB26-92-patches/vendor-magento-module-review.patch"
+                "APSB26-92 security patch module-review": "patches/APSB26-92/vendor-magento-module-review.patch"
             },
             "magento/module-backup": {
                 "APSB26-138 security patch module-backup": "patches/APSB26-138/vendor-magento-module-backup.patch"
