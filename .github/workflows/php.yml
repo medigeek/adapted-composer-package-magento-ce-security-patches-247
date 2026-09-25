@@ -74,7 +74,7 @@ jobs:
           composer config --global 'allow-plugins.php-http/discovery' true
 
           composer create-project --repository-url=https://repo.magento.com/ \
-            "magento/product-community-edition:${MAGENTO_VERSION}" . --no-install --no-interaction
+            "magento/project-community-edition:${MAGENTO_VERSION}" . --no-install --no-interaction
 
           # 3b. Set patch options via CLI
           composer config extra.magento-force override
