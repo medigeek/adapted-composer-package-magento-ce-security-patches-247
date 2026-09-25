@@ -49,11 +49,6 @@ jobs:
           mkdir -p ~/.composer
           echo '${{ secrets.COMPOSER_AUTH }}' > ~/.composer/auth.json
   
-      - name: Create Magento Project
-        run: |
-          composer create-project --repository-url=https://repo.magento.com/ \
-            magento/product-community-edition:2.4.7 magento-dir --no-install --no-interaction
-  
       - name: Require Patch Dependency & Install
         run: |
           # 1. Create directory and initialize a clean root composer.json
