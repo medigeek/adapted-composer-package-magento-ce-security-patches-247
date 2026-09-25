@@ -1,7 +1,7 @@
 name: Test Magento security patches
 
 env:
-  PACKAGE_NAME: "medigeek/adapted-composer-package-magento-ce-security-patches-247"
+  PATCH_PACKAGE_NAME: "medigeek/adapted-composer-package-magento-ce-security-patches-247"
   MAGENTO_VERSION: "2.4.7-p10"
 
 on:
