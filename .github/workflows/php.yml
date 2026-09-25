@@ -67,7 +67,7 @@ jobs:
 
           # 2. Extract skeleton using project-community-edition (NOT product-community-edition)
           composer create-project --repository-url=https://repo.magento.com/ \
-            magento/project-community-edition:${MAGENTO_VERSION} magento-dir --no-install --no-interaction
+            "magento/project-community-edition:${MAGENTO_VERSION}" magento-dir --no-install --no-interaction
 
           # 3. Enter directory to set local extra configuration and requirements
           cd magento-dir
