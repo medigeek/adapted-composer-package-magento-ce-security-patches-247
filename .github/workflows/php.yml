@@ -72,6 +72,7 @@ jobs:
           composer config 'allow-plugins.php-http/discovery' true
 
           # 3b. Set patch options via CLI
+          composer config extra.magento-force override
           composer config extra.composer-exit-on-patch-failure true
           composer config extra.composer-patches.default-patch-depth 4
 
