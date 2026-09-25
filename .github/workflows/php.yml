@@ -39,9 +39,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
   
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress
-  
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -75,17 +72,16 @@ jobs:
           composer config allow-plugins.cweagans/composer-patches true
           
           # Require your patch package (from local path, VCS, or Packagist)
-          #composer require mycompany/magento2-common-patches:@dev --no-update
           composer config repositories.local-patch-pkg path "../"
           composer require medigeek/adapted-composer-package-magento-ce-security-patches-247:@dev --no-update
           
           # Run full install to pull Magento + Apply Patches
           composer install --prefer-dist --no-progress --no-interaction
-  
-      - name: Install Dependencies & Apply Patches
-        run: |
-          composer install --prefer-dist --no-progress --no-interaction
-  
+
+#      - name: Install Dependencies & Apply Patches
+#        run: |
+#          composer install --prefer-dist --no-progress --no-interaction
+
       - name: Verify Patches Applied Successfully
         run: |
           # Check if cweagans plugin applied patches by verifying vendor file changes or checking composer output
