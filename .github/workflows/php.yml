@@ -62,7 +62,7 @@ jobs:
       - name: Create Magento Project
         run: |
           composer create-project --repository-url=https://repo.magento.com/ \
-            magento/product-community-edition:2.4.7 magento-dir --no-install
+            magento/product-community-edition:2.4.7 magento-dir --no-scripts --no-interaction
   
       - name: Require Patch Dependency & Install
         run: |
@@ -77,10 +77,6 @@ jobs:
           
           # Run full install to pull Magento + Apply Patches
           composer install --prefer-dist --no-progress --no-interaction
-
-#      - name: Install Dependencies & Apply Patches
-#        run: |
-#          composer install --prefer-dist --no-progress --no-interaction
 
       - name: Verify Patches Applied Successfully
         run: |
