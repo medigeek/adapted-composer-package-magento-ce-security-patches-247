@@ -2,6 +2,7 @@
     "name": "medigeek/adapted-composer-package-magento-ce-security-patches-247",
     "description": "Adapted composer package of security update patches for Magento 2 / Adobe Commerce Community Edition 2.4.7",
     "type": "magento2-module",
+    "license": "OSL-3.0",
     "require": {
         "cweagans/composer-patches": "^1.7 || ^2.0"
     },
