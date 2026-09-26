@@ -11,7 +11,7 @@ on:
     branches: [ "main" ]
 
 permissions:
-  contents: read
+  contents: write #required for the update-patches-lockfile.yml
 
 jobs:
 
