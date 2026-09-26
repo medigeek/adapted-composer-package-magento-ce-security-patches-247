@@ -38,6 +38,7 @@ jobs:
       - name: Run Composer Install to Generate Lockfile
         run: |
           composer install --prefer-dist --no-progress --no-interaction
+          composer patches-relock
 
       - name: Commit and Push Updated patches.lock.json
         run: |
