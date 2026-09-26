@@ -14,10 +14,13 @@ permissions:
   contents: read
 
 jobs:
-  build:
 
+  # 1. Call the lockfile workflow first
+  update-patches-lockfile:
+    uses: ./.github/workflows/sync-lockfile.yml
+
+  test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
   
