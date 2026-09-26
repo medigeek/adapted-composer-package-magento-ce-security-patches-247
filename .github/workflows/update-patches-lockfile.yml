@@ -1,0 +1,55 @@
+name: Update Patches Lockfile
+
+#on:
+#  push:
+#    branches:
+#      - main
+#    paths:
+#      - 'composer.json'
+#      - 'patches/**'
+#  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+on:
+  workflow_call: # Exposes this file to be called by other workflows
+
+jobs:
+  update-lockfile:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Required to push commits back to the repo
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup PHP and Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+
+      - name: Allow Patch Plugin
+        run: |
+          composer config 'allow-plugins.cweagans/composer-patches' true
+
+      - name: Run Composer Install to Generate Lockfile
+        run: |
+          composer install --prefer-dist --no-progress --no-interaction
+
+      - name: Commit and Push Updated patches.lock.json
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Check if patches.lock.json was modified or created
+          if git status --porcelain | grep -E "patches\.lock\.json"; then
+            echo "Changes detected in patches.lock.json. Committing..."
+            git add patches.lock.json
+            git commit -m "chore(ci): update patches.lock.json [skip ci]"
+            git push origin main
+          else
+            echo "No changes detected in patches.lock.json."
+          fi
