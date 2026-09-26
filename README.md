@@ -11,7 +11,7 @@ For any custom requirements you can contact me at savvas@radevic.com for busines
 
 Automated security patch meta-package providing critical vulnerabilities hotfixes for **Adobe Commerce Open Source / Magento Community Edition 2.4.7** releases.
 
-This repository extracts, formats to favour composer patching, and maintains compatibility-tested security patches derived directly from official Adobe Commerce Security Bulletins ([APSB Releases](https://helpx.adobe.com/security/products/magento.html?utm_source=gemini)), allowing Magento Open Source or Adobe Commerce Community Edition installations to stay secured without waiting for major core upgrade cycles.
+This repository extracts, formats to favour composer patching, and maintains compatibility-tested security patches derived directly from official Adobe Commerce Security Bulletins ([APSB Releases](https://helpx.adobe.com/security/products/magento.html?utm_source=gemini)), allowing Magento Community Edition/Adobe Commerce Open Source installations to stay secured without waiting for major core upgrade cycles.
 
 # Adaptations of patches
 
