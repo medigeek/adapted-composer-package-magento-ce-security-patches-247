@@ -1,0 +1,331 @@
+{
+    "_hash": "fc2923f4d5f0b6f9a87fd205157deeab4e18f501e45c7d45dc01f824aa744576",
+    "patches": {
+        "magento/module-quote": [
+            {
+                "package": "magento/module-quote",
+                "description": "APSB26-73 security patch module-quote",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-quote.patch",
+                "sha256": "71b4cab868e06b8c32a795d7ddfd84d2d540854aae7b42871e9a8eb2021e75b1",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-backend": [
+            {
+                "package": "magento/module-backend",
+                "description": "APSB26-146 security patch module-backend",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-146/vendor-magento-module-backend.patch",
+                "sha256": "a92ea66adbbcdbf77c018f8aba0d24bf1eb6fcffd062f30cb283b0c720a0a324",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/framework": [
+            {
+                "package": "magento/framework",
+                "description": "APSB26-73 security patch framework",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-framework.patch",
+                "sha256": "08c858df43cf9427bef1624717fa62c0cdd8d7736c19662502ff4ae88a08ed4b",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "magento/framework",
+                "description": "APSB26-138 security patch framework",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-138/vendor-magento-framework.patch",
+                "sha256": "68fea93529c0166fb751eef1e779dbc2493cd0f80a3b8d07e3c850a8a6f18007",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "magento/framework",
+                "description": "APSB26-146 security patch framework",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-146/vendor-magento-framework.patch",
+                "sha256": "e5fec1a35971377fede3b76c3305301820eaed27f8e8f990d7da38420eee533d",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-async-config": [
+            {
+                "package": "magento/module-async-config",
+                "description": "APSB26-73 security patch module-async-config",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-async-config.patch",
+                "sha256": "fbfdf4e8029f8d68c0e9852dfdfc235fbbe575a6d96da9603550a26ad152f0e9",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-catalog-inventory": [
+            {
+                "package": "magento/module-catalog-inventory",
+                "description": "APSB26-73 security patch module-catalog-inventory",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-catalog-inventory.patch",
+                "sha256": "a551a67cf78e5585a817091d9117687ab9d85936fa2455732ac8f140accb1d32",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-catalog": [
+            {
+                "package": "magento/module-catalog",
+                "description": "APSB26-73 security patch module-catalog",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-catalog.patch",
+                "sha256": "bc100b83985cde43ae41d5f1b9d4442a7de6a5500f99b49e9e1926ce7f824143",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-catalog-url-rewrite-graph-ql": [
+            {
+                "package": "magento/module-catalog-url-rewrite-graph-ql",
+                "description": "APSB26-73 security patch module-catalog-url-rewrite-graph-ql",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-catalog-url-rewrite-graph-ql.patch",
+                "sha256": "02c53790dae4987f9eed316f8cef3b44a85ac9ff953c5dd39f434c2a13347a6f",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-checkout": [
+            {
+                "package": "magento/module-checkout",
+                "description": "APSB26-73 security patch module-checkout",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-checkout.patch",
+                "sha256": "fe16ba56c0fc6659bb596cec944e4b5ae56abeababd5080823906d6971bc39ae",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-customer": [
+            {
+                "package": "magento/module-customer",
+                "description": "APSB26-73 security patch module-customer",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-customer.patch",
+                "sha256": "d000d0139d9cd3d8d0c38aeedf4f6e836ef94c22b83f69492d5ded52c976be68",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "magento/module-customer",
+                "description": "APSB26-92 security patch module-customer",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-92/vendor-magento-module-customer.patch",
+                "sha256": "aba466c5ad1ca1a1384257936033a2667a478850b301f3fc1ac9693559f83a19",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "magento/module-customer",
+                "description": "APSB26-138 security patch module-customer",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-138/vendor-magento-module-customer.patch",
+                "sha256": "93fdd55322ecc059b6d5c7500c544c3b02359454128c310b349a1ef2f1634145",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-gift-message": [
+            {
+                "package": "magento/module-gift-message",
+                "description": "APSB26-73 security patch module-gift-message",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-gift-message.patch",
+                "sha256": "1a487999f3ac334757e1c09e8a45ed6fb0dcdc058b32349977d6d82779f8414a",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-store": [
+            {
+                "package": "magento/module-store",
+                "description": "APSB26-73 security patch module-store",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-store.patch",
+                "sha256": "83b0699cb8ea002a71a6cdb7c6b5474cc71b67349bd88badbbd3c723599dab67",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-translation": [
+            {
+                "package": "magento/module-translation",
+                "description": "APSB26-73 security patch module-translation",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-73/vendor-magento-module-translation.patch",
+                "sha256": "ca0370a6819141a5319beba6d7ab5f1df4fe5bf1da375083f58feb064cc8f459",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/magento2-base": [
+            {
+                "package": "magento/magento2-base",
+                "description": "APSB26-92 security patch lib-web",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-92/lib-web.patch",
+                "sha256": "aeb8458116d643b8f6f573233a576217ec9cb6a1351ff7a21c5841626de0739d",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "magento/magento2-base",
+                "description": "APSB26-146 security patch pub-errors.patch",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-146/pub-errors.patch",
+                "sha256": "d2e330144550ede820767a1932553f0de54e639c96af84ef620d07860f1003f6",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-cms": [
+            {
+                "package": "magento/module-cms",
+                "description": "APSB26-92 security patch module-cms",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-92/vendor-magento-module-cms.patch",
+                "sha256": "a5aaef93ea32bcd1a7b36625fd0b4532442520e3855d02a22aa7b7ca0e230970",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-review": [
+            {
+                "package": "magento/module-review",
+                "description": "APSB26-92 security patch module-review",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-92/vendor-magento-module-review.patch",
+                "sha256": "31de43eba455c54a76eac688dc7b82b710a96a89c936c7cb1768c24294d35ff9",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-backup": [
+            {
+                "package": "magento/module-backup",
+                "description": "APSB26-138 security patch module-backup",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-138/vendor-magento-module-backup.patch",
+                "sha256": "54f305edf2a224f6ece66270961fd95b5dc281e1ae4a209a4c348b49f3c66c4c",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-customer-graph-ql": [
+            {
+                "package": "magento/module-customer-graph-ql",
+                "description": "APSB26-138 security patch module-customer-graph-ql",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-138/vendor-magento-module-customer-graph-ql.patch",
+                "sha256": "ac8ea8dffd9710397249eb047e8b9e5b6bc95ac465ff286805ab0bab9fabbb57",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-import-export": [
+            {
+                "package": "magento/module-import-export",
+                "description": "APSB26-138 security patch module-import-export",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-138/vendor-magento-module-import-export.patch",
+                "sha256": "d3e59d96e3c4a31905adef9692e6f134269441cd2e3db04ac81d6c554ee11e96",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-instant-purchase": [
+            {
+                "package": "magento/module-instant-purchase",
+                "description": "APSB26-138 security patch module-instant-purchase",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-138/vendor-magento-module-instant-purchase.patch",
+                "sha256": "906744362043d9ab9c33a07c0977f9fd0e545c7fff2e4d50c7cb5239cb7d992b",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-paypal": [
+            {
+                "package": "magento/module-paypal",
+                "description": "APSB26-138 security patch module-paypal",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-138/vendor-magento-module-paypal.patch",
+                "sha256": "90d33e75dedd333d90757240e47fa9c771e540e772d1aea1ad230df96a521222",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-sales": [
+            {
+                "package": "magento/module-sales",
+                "description": "APSB26-138 security patch module-sales",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-138/vendor-magento-module-sales.patch",
+                "sha256": "0193dc318733c00a1c162a6e4158404de5647810edc7b139d801ad6d3e4d2d83",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-email": [
+            {
+                "package": "magento/module-email",
+                "description": "APSB26-146 security patch module-email",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-146/vendor-magento-module-email.patch",
+                "sha256": "ab51e0333451acd78e2e8fb54784f2a1be0e14807f3420f4c0f9611df568820e",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "magento/module-newsletter": [
+            {
+                "package": "magento/module-newsletter",
+                "description": "APSB26-146 security patch module-newsletter",
+                "url": "https://raw.githubusercontent.com/medigeek/magento-ce-security-patches-247/main/patches/APSB26-146/vendor-magento-module-newsletter.patch",
+                "sha256": "e96b16309b868cee65d5a21a7e6274e2c0590cf65ed19ca63817e72687b1afa7",
+                "depth": 4,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}
