@@ -41,15 +41,26 @@ jobs:
 
       - name: Commit and Push Updated patches.lock.json
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # Check if patches.lock.json exists on the filesystem
+          if [ -f "patches.lock.json" ]; then
+            
+            # Check if Git sees it as modified OR untracked (first time)
+            if [ -n "$(git status --porcelain patches.lock.json)" ]; then
+              echo "Detected new or modified patches.lock.json. Committing..."
 
-          # Check if patches.lock.json was modified or created
-          if git status --porcelain | grep -E "patches\.lock\.json"; then
-            echo "Changes detected in patches.lock.json. Committing..."
-            git add patches.lock.json
-            git commit -m "chore(ci): update patches.lock.json [skip ci]"
-            git push origin main
+              git config --global user.name "github-actions[bot]"
+              git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+              # Stage specifically patches.lock.json
+              git add patches.lock.json
+              
+              # Commit and push
+              git commit -m "chore(ci): update patches.lock.json [skip ci]"
+              git push origin ${{ github.ref_name }}
+            else
+              echo "patches.lock.json exists and is up to date."
+            fi
+
           else
-            echo "No changes detected in patches.lock.json."
+            echo "No patches.lock.json was generated during composer install."
           fi
