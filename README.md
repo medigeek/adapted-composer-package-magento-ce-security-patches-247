@@ -7,7 +7,7 @@ Adapted composer package of security update patches for Magento Community Editio
 
 For any custom requirements you can contact me at savvas@radevic.com for business engagements.
 
-# Magento CE 2.4.7 Security Patches (`medigeek/magento-ce-security-patches-247`)
+# Adobe Commerce Open Source 2.4.7 Security Patches (`medigeek/magento-ce-security-patches-247`)
 
 Automated security patch meta-package providing critical vulnerabilities hotfixes for **Adobe Commerce Open Source / Magento Community Edition 2.4.7** releases.
 
